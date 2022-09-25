@@ -66,6 +66,7 @@ ul {
   line-height: 1.2;
   letter-spacing: 0.03em;
   color: var(--primary-black-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* nav */
@@ -90,7 +91,6 @@ ul {
 
 .header-nav .link {
   position: relative;
-  /* display: inline-block; */
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -103,7 +103,7 @@ ul {
 }
 
 .header-nav .current::after {
-  content:"";
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -119,7 +119,7 @@ ul {
 }
 
 /* .contacts */
-.contacts-list .link {
+.link.contacts-icon {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -130,7 +130,8 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-  fill: var(--primary-text-color);
+  fill: currentColor;
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -138,9 +139,10 @@ ul {
   margin-right: 10px;
 }
 
-.contacts-icon:hover,
-.contacts-icon:focus {
+.link.contacts-icon:hover,
+.link.contacts-icon:focus {
   fill: var(--accent-color);
+  color: var(--accent-color);
 
 }
 
@@ -195,6 +197,9 @@ ul {
   color: var(--first-bg-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -202,6 +207,9 @@ ul {
   color: var(--first-bg-color);
   background-color: var(--btn-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Features section */
@@ -290,18 +298,22 @@ ul {
   position: relative;
 }
 
-.our-work::after {
-  content: "";
+.box-text {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 70px;
-  background-color: rgba(47, 48, 58, 0.8);;
-}
-
-.box-text { 
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 
@@ -368,7 +380,7 @@ ul {
   display: flex;
   margin-top: 16px;
   justify-content: center;
-  
+
 
 }
 
@@ -380,6 +392,10 @@ ul {
   justify-content: center;
   align-items: center;
   color: var(--icon-team-color);
+  background-color: var(--first-bg-color);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -399,6 +415,8 @@ ul {
   color: var(--first-bg-color);
   background-color: var(--accent-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -427,16 +445,22 @@ ul {
   fill: var(--icon-team-color);
   border: 1px solid var(--icon-team-color);
   border-radius: 4px;
+
+  /* transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 2500ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .client-list .list-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.client-list .link:focus,
-.client-list .link:hover {
+.client-link:focus,
+.client-link:hover {
   border-color: var(--accent-color);
   fill: var(--accent-color);
+  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 /* footer */
@@ -455,6 +479,7 @@ ul {
 .logo:hover,
 .logo:focus {
   color: var(--accent-color);
+
 }
 
 /* address */
@@ -480,11 +505,13 @@ ul {
 
 .address-text {
   color: var(--first-bg-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-text:hover,
 .address-text:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link {
@@ -498,6 +525,7 @@ ul {
 .link:hover,
 .link:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-container {
@@ -543,6 +571,7 @@ ul {
 .link.footer-link:focus {
   background-color: var(--accent-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -582,6 +611,35 @@ ul {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.text-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: black;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+.portfolio.link:hover .text-wrap {
+  transform: translateY(0%);
 }
 
 .portfolio-card {
@@ -641,9 +699,14 @@ ul {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
+
+
+
+/* backdrop */
 
 .backdrop {
   position: fixed;
@@ -676,7 +739,7 @@ ul {
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  }
+}
 
 .modal {
   position: absolute;
@@ -684,9 +747,9 @@ ul {
   height: 581px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  
+
 }
