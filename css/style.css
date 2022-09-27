@@ -618,7 +618,7 @@ ul {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  color: black;
+  color: var(--first-bg-color);
   background-color: rgba(33, 150, 243, 0.9);
   transition: transform 250ms var(--cubic);
 
